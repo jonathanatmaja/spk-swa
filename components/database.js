@@ -10,7 +10,10 @@ const maindb = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.e
 
 const company = require("../models/company");
 const companyModel = company(maindb, DataTypes);
+const employee = require("../models/employee");
+const employeeModel = employee(maindb, DataTypes);
 
 module.exports = { 
-    company: companyModel
+    company: companyModel,
+    employee: employeeModel
 };
