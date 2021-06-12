@@ -4,7 +4,7 @@ const router = express.Router();
 
 const index = function (req, res, next) {
 
-    response.res404(res);
+    response.resWelcome(res,res);
 
 }
 
