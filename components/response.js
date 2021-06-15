@@ -1,16 +1,5 @@
 "use strict";
 
-exports.resWelcome = function (res, values = "SPK-SWA API"){
-    var data = {
-        message: "Operation success",
-        values: values,
-    };
-
-    res.status(200);
-    res.sendFile(__dirname + '/index.html');
-    // res.end();
-
-}
 exports.res200 = function (res, values = "OK") {
     var data = {
         message: "Operation success",

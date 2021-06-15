@@ -8,12 +8,12 @@ const maindb = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.e
     timezone: '+07:00'
 });
 
-const company = require("../models/company");
-const companyModel = company(maindb, DataTypes);
-const employee = require("../models/employee");
-const employeeModel = employee(maindb, DataTypes);
+const user = require("../models/user");
+const userModel = user(maindb, DataTypes);
+const roles = require("../models/roles");
+const rolesModel = roles(maindb, DataTypes);
 
 module.exports = { 
-    company: companyModel,
-    employee: employeeModel
+    user: userModel,
+    roles: rolesModel
 };

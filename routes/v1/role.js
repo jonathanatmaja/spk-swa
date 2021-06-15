@@ -4,14 +4,16 @@ const validator = require("../../middlewares/validator");
 const express = require("express");
 const router = express.Router();
 
-const controller = require("../../controllers/company");
+const controller = require("../../controllers/role");
 
 const index = function (req, res, next) {
   response.res404(res);
 };
 
-router.route("/").get((req, res) => {
-  controller.getAllCompany(req, res);
+router.route("/").get((req,res) => {
+
+    controller.getRoles(req,res);
+
 });
 
 router.all("*", index);

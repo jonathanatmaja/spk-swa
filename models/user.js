@@ -1,44 +1,45 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('employee', {
+  return sequelize.define('user', {
     id: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: "unique_employee_detail_id",
+      unique: "unique_user_id",
       primaryKey:true
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    age: {
-      type: DataTypes.INTEGER,
+    role: {
+      type: DataTypes.STRING,
       allowNull: false
     },
-    date_of_birth: {
-      type: DataTypes.DATEONLY,
-      allowNull: false
-    },
-    salary: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    employee_id: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false
     },
     deleted: {
       type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
+    },
+    password: {
+      type: DataTypes.STRING,
       allowNull: false
+    },
+    address: {
+      type: DataTypes.STRING(50),
+      allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'employee',
+    tableName: 'user',
     schema: 'public',
     timestamps: false,
     indexes: [
       {
-        name: "unique_employee_detail_id",
+        name: "unique_user_id",
         unique: true,
         fields: [
           { name: "id" },
